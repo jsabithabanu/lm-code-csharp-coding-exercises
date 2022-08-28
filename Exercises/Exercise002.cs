@@ -1,26 +1,22 @@
 ﻿using System;
+using Exercises.Models;
 namespace Exercises
 {
     public class Exercise002
     {
-        // 👉 Remember to delete all unnecessary comments (like this one) when you're done! 
+        public bool IsFromManchester(Person person)
 
-        public bool IsFromManchester(/* Person person */)
-        {
-            // 👉 DON'T FORGET to uncomment the tests in Exercise002Tests.cs 
-            // Uncomment the parameter above and delete this comment
+           /* If person is null -> false
+            *  person is from Manchester -> true
+            *  person is not from Manchester -> false */
 
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
-        }
+           => person != null && person.City == "Manchester";
+       
 
-        public bool CanWatchFilm(/*Person person, int ageLimit*/)
-        {
-            // 👉 DON'T FORGET to uncomment the tests in Exercise002Tests.cs 
-            // Uncomment the parameters above and delete this comment
+        public bool CanWatchFilm(Person person, int ageLimit)
 
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
-        }
+            //People with age equal to or above the age limit can watch film
+            => person.Age >= ageLimit;
+
     }
 }

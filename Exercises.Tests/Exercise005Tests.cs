@@ -65,5 +65,30 @@ namespace Exercises.Tests
         {
             Exercise005.IsPangram("the 1 quick brown fox jumps over the 2 lazy dogs").Should().Be(true);
         }
+
+        //Additional Test cases
+        [Test]
+        public void IsPangram_Should_Return_True_For_Pangram_With_Repeated_Letters()
+        {
+            Exercise005.IsPangram("aabbccddeeffGGHHIIIJJkkllmmnnooppqqRRSSTTuuvvwwxxyyzz").Should().Be(true);
+        }
+
+        [Test]
+        public void IsPangram_Should_Return_False_For_Pangram_With_Null_Input()
+        {
+            Exercise005.IsPangram(null).Should().Be(false);
+        }
+
+        [Test]
+        public void IsPangram_Should_Return_False_For_Missing_Multiple_Letters_H_M_T_Sentence()
+        {
+            Exercise005.IsPangram("five boxing wizards ju p quickly a i").Should().Be(false);
+        }
+
+        [Test]
+        public void IsPangram_Should_Return_True_For_Pangram_With_Asterisk_Slash_Ampersand()
+        {
+            Exercise005.IsPangram("abcd * efgh ijkl / mnop qrst & uvwx yz").Should().Be(true);
+        }
     }
 }

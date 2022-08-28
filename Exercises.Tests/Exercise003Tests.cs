@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using FluentAssertions;
+using System;
 
 namespace Exercises.Tests
 {
@@ -46,6 +47,23 @@ namespace Exercises.Tests
             string[] expected = { "Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip", "Chocolate", "Mango Sorbet" };
 
             Exercise003.IceCreamFlavours.Should().Equal(expected);
+        }
+
+        //Additional tests
+        [Test]
+        public void Given_Cookie_Dough_GetIceCreamCode_Should_Return_Minus_One()
+        {
+            string iceCreamFlavour = "Cookie Dough";
+            int expectedCode = -1;
+
+            Exercise003.IceCreamCode(iceCreamFlavour).Should().Be(expectedCode);
+        }
+
+        [Test]
+        public void IceCreamCode_Should_Throw_Argument_Exception()
+        {
+            var ex = Assert.Throws<ArgumentException>(() => Exercise003.IceCreamCode(null));
+            Assert.That(ex.Message, Is.EqualTo("Please enter a valid flavour name."));
         }
     }
 }
