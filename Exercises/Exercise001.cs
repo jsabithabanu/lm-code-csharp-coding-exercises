@@ -72,11 +72,8 @@ namespace Exercises
             }
             else
             {
-                //Finding the users count whose Type is "Linux" (i.e) Linux users
-                users.ForEach (i => 
-                { if (i.Type.Equals("Linux"))
-                        linuxUserCount++;
-                } );
+                //Getting the count of Linux users
+                linuxUserCount = users.Count(n => n.Type == "Linux");
                 return linuxUserCount;
             }
         }
